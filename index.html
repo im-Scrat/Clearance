@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clearance App</title>
+  <!-- Link to the manifest file -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to Clearance App</h1>
+  </header>
+  <main>
+    <p>This is a sample Progressive Web App (PWA) for a school clearance project.</p>
+    <button id="login">Login</button>
+  </main>
+  <script src="app.js"></script>
+  <script>
+    // Register the service worker for offline support
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(function(registration) {
+          console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch(function(error) {
+          console.error('Service Worker registration failed:', error);
+        });
+    }
+  </script>
+</body>
+</html>
